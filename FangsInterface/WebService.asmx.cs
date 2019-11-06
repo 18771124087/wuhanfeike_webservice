@@ -37,7 +37,7 @@ namespace FangsInterface
         {
             LogHelper.WriteLog("登陆[checkLogin] 入参：" + inputXml);
             try
-            {
+            {  
                 #region 解析入参
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(inputXml);
