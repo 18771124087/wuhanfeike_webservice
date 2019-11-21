@@ -56,7 +56,6 @@ namespace FangsInterface
                 OracleHelper.PrepareParameter("pid", OracleDbType.Varchar2, pid)
                 };
 
-                LogHelper.WriteLog("住院号 sqlStr: " + strSql);
                 ds = OracleHelper.ExecuteDataset(connection, CommandType.Text, strSql, oracleParams);
             }
             catch (Exception ex)

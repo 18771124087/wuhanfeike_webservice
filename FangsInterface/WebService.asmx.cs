@@ -124,6 +124,7 @@ namespace FangsInterface
         [WebMethod(EnableSession = true, Description = "根据住院号( 腕带号) 查询病人信息")]
         public string getPatientInfo(string inputXml)
         {
+
             try
             {
                 LogHelper.WriteLog("根据腕带号查询病人信息[getPatientInfo] 入参：" + inputXml);
@@ -160,7 +161,11 @@ namespace FangsInterface
                 else
                 {
                     string firstPid = pId.TrimStart("90".ToCharArray());
-                    string endPid = firstPid.Trim('0');
+                    string endPid = "" ;
+                    if (firstPid.EndsWith("0"))
+                    {
+                        endPid = firstPid.Substring(0, firstPid.Length-1);
+                    }
 
                     Util.errMessage("最终得到的病人id = " + endPid);
 
